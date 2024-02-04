@@ -66,7 +66,7 @@ export default function Contacts({ contacts, changeChat }) {
             <div className="username">
               <h2>{currentUserName}</h2>
             </div>
-            <button onClick={handleRandomUserClick}>Random User</button>
+            <button className="random" onClick={handleRandomUserClick}>Random User</button>
           </div>
         </Container>
       )}
@@ -150,6 +150,18 @@ const Container = styled.div`
         color: white;
       }
     }
+
+    .random{
+      background-color:red;
+      color:white;
+      border:0px;
+      border-radius:5px;
+      height:50px;
+      width:60px;
+      cursor:pointer;
+      font-weight:bold;
+    }
+
     @media screen and (min-width: 720px) and (max-width: 1080px) {
       gap: 0.5rem;
       .username {
