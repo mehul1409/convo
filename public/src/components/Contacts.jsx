@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import Logo from "../assets/logo.svg";
+import Logo from "../assets/6efea47f-61f6-4ba1-a420-8fde42c67d0b.jpeg";
 
 export default function Contacts({ contacts, changeChat }) {
   const [currentUserName, setCurrentUserName] = useState(undefined);
@@ -31,7 +31,7 @@ export default function Contacts({ contacts, changeChat }) {
         <Container>
           <div className="brand">
             <img src={Logo} alt="logo" />
-            <h3>convo</h3>
+            {/* <h3>convo</h3> */}
           </div>
           <div className="contacts">
             {contacts.map((contact, index) => {
@@ -66,7 +66,7 @@ export default function Contacts({ contacts, changeChat }) {
             <div className="username">
               <h2>{currentUserName}</h2>
             </div>
-            <button onClick={handleRandomUserClick}>Random User</button>
+            <button className="random" onClick={handleRandomUserClick}>Random User</button>
           </div>
         </Container>
       )}
@@ -84,7 +84,8 @@ const Container = styled.div`
     gap: 1rem;
     justify-content: center;
     img {
-      height: 2rem;
+      height: 2.7rem;
+      border-radius:10px;
     }
     h3 {
       color: white;
@@ -149,6 +150,18 @@ const Container = styled.div`
         color: white;
       }
     }
+
+    .random{
+      background-color:red;
+      color:white;
+      border:0px;
+      border-radius:5px;
+      height:50px;
+      width:60px;
+      cursor:pointer;
+      font-weight:bold;
+    }
+
     @media screen and (min-width: 720px) and (max-width: 1080px) {
       gap: 0.5rem;
       .username {

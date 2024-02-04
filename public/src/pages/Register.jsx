@@ -57,7 +57,7 @@ export default function Register() {
 
   useEffect(() => {
     if (localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)) {
-      navigate("/");
+      navigate("/chat");
     }
   }, []);
 
@@ -98,7 +98,7 @@ export default function Register() {
           process.env.REACT_APP_LOCALHOST_KEY,
           JSON.stringify(data.user)
         );
-        navigate("/");
+        navigate("/chat");
       }
     }
   };
@@ -108,7 +108,7 @@ export default function Register() {
       <FormContainer>
         <form action="" onSubmit={(event) => handleSubmit(event)}>
           <div className="brand">
-            <img src={Logo} alt="logo" />
+            {/* <img src={Logo} alt="logo" /> */}
             <h1>convo</h1>
           </div>
           <input
@@ -156,6 +156,7 @@ justify-content: center;
 gap: 1rem;
 align-items: center;
 background-color: #131324;
+
 .brand {
   display: flex;
   align-items: center;
@@ -178,10 +179,11 @@ form {
   border-radius: 2rem;
   padding: 3rem 5rem;
 }
+
 input {
   background-color: transparent;
   padding: 1rem;
-  border: 0.1rem solid #4e0eff;
+  border: 0.1rem solid red;
   border-radius: 0.4rem;
   color: white;
   width: 100%;
@@ -191,8 +193,9 @@ input {
     outline: none;
   }
 }
+
 button {
-  background-color: #4e0eff;
+  background-color: red;
   color: white;
   padding: 1rem 2rem;
   border: none;
@@ -202,14 +205,15 @@ button {
   font-size: 1rem;
   text-transform: uppercase;
   &:hover {
-    background-color: #4e0eff;
+    background-color: red;
   }
 }
+
 span {
   color: white;
   text-transform: uppercase;
   a {
-    color: #4e0eff;
+    color: red;
     text-decoration: none;
     font-weight: bold;
   }
